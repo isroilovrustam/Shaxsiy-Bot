@@ -25,7 +25,7 @@ async def all_users(message: types.Message):
             await message.answer(text, reply_markup=delete_text)
             text = f"Users: {len(users.json())}\n"
     # print(users[0][0])
-    # await message.answer(text, reply_markup=delete_text)
+    await message.answer(text, reply_markup=delete_text)
 
 
 @dp.message_handler(text='📲 Reklama', user_id=ADMINS)
