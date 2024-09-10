@@ -24,7 +24,6 @@ async def all_users(message: types.Message):
         if i["id"] % 40 == 0:
             await message.answer(text, reply_markup=delete_text)
             text = f"Users: {len(users.json())}\n"
-
     await message.answer(text, reply_markup=delete_text)
 
 
