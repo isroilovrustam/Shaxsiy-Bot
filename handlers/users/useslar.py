@@ -21,9 +21,11 @@ async def all_users(message: types.Message):
         text += f"Id: {i['id']}\n"
         text += f"🧑‍💼Name: {i['name']}\n"
         text += f"🆔Chat id: {i['chat_id']}\n"
-
+        if i["id"] % 10 == 5:
+            await message.answer(text, reply_markup=delete_text)
+            text = f"Users: {len(users.json())}\n"
     # print(users[0][0])
-    await message.answer(text, reply_markup=delete_text)
+    # await message.answer(text, reply_markup=delete_text)
 
 
 @dp.message_handler(text='📲 Reklama', user_id=ADMINS)
